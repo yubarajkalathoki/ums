@@ -1,6 +1,6 @@
 <%-- 
-    Document   : login
-    Created on : Jul 11, 2018, 8:43:38 AM
+    Document   : signup
+    Created on : Jul 17, 2018, 7:48:36 AM
     Author     : Yubaraj
 --%>
 
@@ -9,18 +9,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login</title>
+        <title>JSP Page</title>
     </head>
     <body>
-        <h1>Login Page!</h1>
-        <form method="get" action="./LoginServlet">
+        <h1>Signup Page!</h1>
+        <form method="get" action="./SignupServlet">
+            First Name: <input type="text" name="fn">
+            Last Name: <input type="text" name="ln">
             Username: <input type="text" name="un">
             Password: <input type="password" name="pw">
-            <input type="submit" value="Login">
+            <input type="submit" value="Signup">
         </form>
-        <h1>OR</h1>
-        <h3>
-            <a href="signup.jsp">Signup</a>
-        </h3>
     </body>
 </html>
