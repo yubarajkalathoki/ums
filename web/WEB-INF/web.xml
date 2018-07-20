@@ -3,9 +3,17 @@
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
+    <servlet>
+        <servlet-name>UserListServlet</servlet-name>
+        <servlet-class>com.texasintl.ums.servlet.UserListServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignupServlet</servlet-name>
         <url-pattern>/SignupServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserListServlet</servlet-name>
+        <url-pattern>/UserListServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

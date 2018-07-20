@@ -29,27 +29,31 @@ public class SignupServlet extends HttpServlet {
         String username = request.getParameter("un");
         String password = request.getParameter("pw");
         String firstName = request.getParameter("fn");
-        String lastName = request.getParameter("ls");
+        String lastName = request.getParameter("ln");
         PrintWriter out = response.getWriter();
         out.println("Username: "+username);
         out.println("Password :"+password);
         
         
-//        Connection cn = DatabaseConnection.getConnection();
-//        String sql = "insert into user (username, password) values ('"+username+"', '"+password+"')";
-//        try {
-//            Statement stat = cn.createStatement();
-//            stat.executeUpdate(sql);
-//            out.print("inserted");
-
-//        } catch (SQLException ex) {
-
-//            ex.printStackTrace();
-//        }
+        Connection cn = DatabaseConnection.getConnection();
+        String sql = "insert into user (username, password, first_name, "
+                + "last_name) values ('"+username+"', '"+password+"', "
+                + ""+firstName+"', '"+lastName+"')";
+        System.out.println("SQL: "+sql);
+        try {
+            Statement stat = cn.createStatement();
+            stat.executeUpdate(sql);
+            out.print("inserted");
+            response.sendRedirect("./login.jsp");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            //pass exception message to error.jsp page
+             response.sendRedirect("./error.jsp");
+        }
 
 // if signup is success then send to login.jsp page
 
-    response.sendRedirect("login.jsp");
+    //response.sendRedirect("login.jsp");
 
 //    else
 
