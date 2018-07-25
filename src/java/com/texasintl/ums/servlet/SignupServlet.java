@@ -38,7 +38,7 @@ public class SignupServlet extends HttpServlet {
         Connection cn = DatabaseConnection.getConnection();
         String sql = "insert into user (username, password, first_name, "
                 + "last_name) values ('"+username+"', '"+password+"', "
-                + ""+firstName+"', '"+lastName+"')";
+                + "'"+firstName+"', '"+lastName+"')";
         System.out.println("SQL: "+sql);
         try {
             Statement stat = cn.createStatement();

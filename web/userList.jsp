@@ -21,12 +21,12 @@
                 <td>Last Name</td>
                 <td>Username</td>
             </tr>
-            <c:forEach var="user" items="${userDtoList}">
+            <c:forEach var="user" items="${userDtoListObj}">
                 <tr>
                 <td>${user.id}</td>
                 <td>${user.firstName}</td>
-                <td>Last Name</td>
-                <td>Username</td>
+                <td>${user.lastName}</td>
+                <td>${user.username}</td>
             </tr>
             </c:forEach>
         </table>

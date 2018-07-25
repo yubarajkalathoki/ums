@@ -43,11 +43,15 @@ public class UserListServlet extends HttpServlet {
                 UserDto userDto = new UserDto();
                 int id = rs.getInt("id");
                 String firstName = rs.getString("first_name");
+                String lastName = rs.getString("last_name");
+                String username = rs.getString("username");
                 userDto.setId(id);
                 userDto.setFirstName(firstName);
+                userDto.setLastName(lastName);
+                userDto.setUsername(username);
                 userDtoList.add(userDto);
             }
-            request.setAttribute("userDtoList", userDtoList);
+            request.setAttribute("userDtoListObj", userDtoList);
             RequestDispatcher rd = request.getRequestDispatcher("./userList.jsp");
             rd.forward(request, response);
         } catch (Exception e) {

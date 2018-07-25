@@ -24,7 +24,7 @@
         </h3>
         <h1>OR</h1>
         <h3>
-            <a href="userList.jsp">View List Of Users</a>
+            <a href="./UserListServlet">View List Of Users</a>
         </h3>
     </body>
 </html>
