@@ -16,18 +16,27 @@
         <h1>User Lists!</h1>
         <table border="1">
             <tr>
-                <td>ID</td>
-                <td>First Name</td>
-                <td>Last Name</td>
-                <td>Username</td>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+                <th>Action</th>
             </tr>
             <c:forEach var="user" items="${userDtoListObj}">
                 <tr>
-                <td>${user.id}</td>
-                <td>${user.firstName}</td>
-                <td>${user.lastName}</td>
-                <td>${user.username}</td>
-            </tr>
+                    <td>${user.id}</td>
+                    <td>${user.firstName}</td>
+                    <td>${user.lastName}</td>
+                    <td>${user.username}</td>
+                    <td>
+                        <a href="
+                           <c:url value="/DeleteUserServlet">
+                               <c:param name="userId" value="${user.id}"/>
+                           </c:url>">
+                            <c:out value="Delete"/>
+                        </a>
+                    </td>
+                </tr>
             </c:forEach>
         </table>
         <h3>
