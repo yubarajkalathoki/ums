@@ -35,6 +35,12 @@
                            </c:url>">
                             <c:out value="Delete"/>
                         </a>
+                        <a href="
+                           <c:url value="/EditUserServlet">
+                               <c:param name="userId" value="${user.id}"/>
+                           </c:url>">
+                            <c:out value="Edit"/>
+                        </a>
                     </td>
                 </tr>
             </c:forEach>
